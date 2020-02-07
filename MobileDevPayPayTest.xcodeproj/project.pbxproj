@@ -18,7 +18,9 @@
 		171997B423ED575C0078DAD6 /* DashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B323ED575C0078DAD6 /* DashViewModel.swift */; };
 		171997B723ED5CA60078DAD6 /* DashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B523ED5CA60078DAD6 /* DashCollectionViewCell.swift */; };
 		171997B823ED5CA60078DAD6 /* DashCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171997B623ED5CA60078DAD6 /* DashCollectionViewCell.xib */; };
-		171997BA23ED5E6B0078DAD6 /* CollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B923ED5E6B0078DAD6 /* CollectionViewCellExtension.swift */; };
+		171997BA23ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B923ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift */; };
+		1CCF5E8C23ED99230011E72B /* UnitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF5E8A23ED99230011E72B /* UnitListViewController.swift */; };
+		1CCF5E8D23ED99230011E72B /* UnitListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCF5E8B23ED99230011E72B /* UnitListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,9 @@
 		171997B323ED575C0078DAD6 /* DashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashViewModel.swift; sourceTree = "<group>"; };
 		171997B523ED5CA60078DAD6 /* DashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCollectionViewCell.swift; sourceTree = "<group>"; };
 		171997B623ED5CA60078DAD6 /* DashCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashCollectionViewCell.xib; sourceTree = "<group>"; };
-		171997B923ED5E6B0078DAD6 /* CollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellExtension.swift; sourceTree = "<group>"; };
+		171997B923ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		1CCF5E8A23ED99230011E72B /* UnitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitListViewController.swift; sourceTree = "<group>"; };
+		1CCF5E8B23ED99230011E72B /* UnitListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +87,8 @@
 		1719976423ED34480078DAD6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1719976E23ED3D880078DAD6 /* DashViewController.swift */,
-				1719976F23ED3D880078DAD6 /* DashViewController.xib */,
-				171997B323ED575C0078DAD6 /* DashViewModel.swift */,
-				171997B523ED5CA60078DAD6 /* DashCollectionViewCell.swift */,
-				171997B623ED5CA60078DAD6 /* DashCollectionViewCell.xib */,
+				1CCF5E8923ED98FE0011E72B /* Dashboard */,
+				1CCF5E8823ED98E90011E72B /* UnitList */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				1719976623ED34B90078DAD6 /* UIViewControllerExtension.swift */,
-				171997B923ED5E6B0078DAD6 /* CollectionViewCellExtension.swift */,
+				171997B923ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +124,27 @@
 				1719977323ED400A0078DAD6 /* CurrenciesAPIModel.swift */,
 			);
 			path = APIModel;
+			sourceTree = "<group>";
+		};
+		1CCF5E8823ED98E90011E72B /* UnitList */ = {
+			isa = PBXGroup;
+			children = (
+				1CCF5E8A23ED99230011E72B /* UnitListViewController.swift */,
+				1CCF5E8B23ED99230011E72B /* UnitListViewController.xib */,
+			);
+			path = UnitList;
+			sourceTree = "<group>";
+		};
+		1CCF5E8923ED98FE0011E72B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1719976E23ED3D880078DAD6 /* DashViewController.swift */,
+				1719976F23ED3D880078DAD6 /* DashViewController.xib */,
+				171997B323ED575C0078DAD6 /* DashViewModel.swift */,
+				171997B523ED5CA60078DAD6 /* DashCollectionViewCell.swift */,
+				171997B623ED5CA60078DAD6 /* DashCollectionViewCell.xib */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1719975D23ED33DC0078DAD6 /* LaunchScreen.storyboard in Resources */,
+				1CCF5E8D23ED99230011E72B /* UnitListViewController.xib in Resources */,
 				1719975A23ED33DC0078DAD6 /* Assets.xcassets in Resources */,
 				171997B823ED5CA60078DAD6 /* DashCollectionViewCell.xib in Resources */,
 				1719977123ED3D880078DAD6 /* DashViewController.xib in Resources */,
@@ -197,13 +220,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171997BA23ED5E6B0078DAD6 /* CollectionViewCellExtension.swift in Sources */,
+				171997BA23ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift in Sources */,
 				1719975123ED33D60078DAD6 /* AppDelegate.swift in Sources */,
 				1719977423ED400A0078DAD6 /* CurrenciesAPIModel.swift in Sources */,
 				1719977023ED3D880078DAD6 /* DashViewController.swift in Sources */,
 				1719976A23ED35440078DAD6 /* APIService.swift in Sources */,
 				171997B723ED5CA60078DAD6 /* DashCollectionViewCell.swift in Sources */,
 				171997B423ED575C0078DAD6 /* DashViewModel.swift in Sources */,
+				1CCF5E8C23ED99230011E72B /* UnitListViewController.swift in Sources */,
 				1719976723ED34B90078DAD6 /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

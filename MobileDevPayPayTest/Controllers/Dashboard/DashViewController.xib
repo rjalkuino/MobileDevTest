@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashViewController" customModule="MobileDevPayPayTest" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="vgY-Ho-0yx" id="vTz-uj-sFf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,9 +19,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oqk-uf-FKs">
-                    <rect key="frame" x="20" y="44" width="374" height="818"/>
+                    <rect key="frame" x="20" y="84" width="374" height="778"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IV1-aU-zRy">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IV1-aU-zRy">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="amP-mZ-mKl"/>
@@ -28,15 +29,35 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1f-j1-Xtl">
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRb-dg-C2m">
                             <rect key="frame" x="0.0" y="70" width="374" height="50"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UD-tI-ksY">
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-wQ-lgM">
+                                    <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                    <state key="normal" title="USD"/>
+                                    <connections>
+                                        <action selector="currencyChangerBtnPressed:" destination="-1" eventType="touchUpInside" id="PT2-c2-NVc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="F7X-Q1-sKh"/>
+                                <constraint firstItem="nRD-wQ-lgM" firstAttribute="width" secondItem="4UD-tI-ksY" secondAttribute="width" id="jIA-eE-CDS"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1f-j1-Xtl">
+                            <rect key="frame" x="0.0" y="140" width="374" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Hpr-z4-k50"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="CONVERT"/>
                         </button>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-Ho-0yx">
-                            <rect key="frame" x="0.0" y="140" width="374" height="678"/>
+                            <rect key="frame" x="0.0" y="210" width="374" height="568"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ve4-IS-EIE">
                                 <size key="itemSize" width="50" height="50"/>
@@ -44,6 +65,10 @@
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="4E7-oN-0x0"/>
+                                <outlet property="delegate" destination="-1" id="Pyu-OD-bpQ"/>
+                            </connections>
                         </collectionView>
                     </subviews>
                 </stackView>
@@ -52,7 +77,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oqk-uf-FKs" secondAttribute="trailing" constant="20" id="DjA-dx-0YO"/>
                 <constraint firstItem="oqk-uf-FKs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="PjI-sy-xW3"/>
-                <constraint firstItem="oqk-uf-FKs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QJS-ti-HRa"/>
+                <constraint firstItem="oqk-uf-FKs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="QJS-ti-HRa"/>
                 <constraint firstItem="oqk-uf-FKs" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="kxx-aC-rBc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

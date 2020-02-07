@@ -9,7 +9,9 @@
 import UIKit
 
 class DashCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var currencyUnit: UILabel!
+    @IBOutlet weak var currencyValue: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

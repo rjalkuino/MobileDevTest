@@ -49,7 +49,9 @@ class APIService<T:Decodable> {
     }
     
     
-    private static func fetch(url: URL,completion: @escaping(Result<T, APIServiceError>) -> Void) {
+    private static func fetch(url: URL,
+                              completion: @escaping(Result<T, APIServiceError>) -> Void) {
+        
         guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
             completion(.failure(.invalidEndpoint))
             return 
@@ -85,10 +87,13 @@ class APIService<T:Decodable> {
         }.resume()
     }
     
-    public static func get(from endpoint: Endpoint,completion: @escaping(Result<T, APIServiceError>) -> Void) {
-        let movieURL = baseURL
+    public static func get(from endpoint: Endpoint,
+                           params:[String:Any]? = nil,
+                           completion: @escaping(Result<T, APIServiceError>) -> Void) {
+        
+        let url = baseURL
             .appendingPathComponent(endpoint.description)
         
-        return fetch(url: movieURL, completion: completion)
+        return fetch(url: url, completion: completion)
     }
 }
