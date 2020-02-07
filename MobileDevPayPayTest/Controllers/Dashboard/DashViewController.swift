@@ -27,7 +27,9 @@ class DashViewController: UIViewController {
         
     }
     @IBAction func currencyChangerBtnPressed(_ sender: Any) {
-        
+        let controller = UnitListViewController.loadFromNib()
+        controller.items = viewModel.currenciesList
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
