@@ -15,7 +15,9 @@ class DashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        viewModel.getAllCurrentConvertion(completion: { [weak self ] isSuccess in
+            guard let weakSelf = self else { return }
+        })
         
     }
 

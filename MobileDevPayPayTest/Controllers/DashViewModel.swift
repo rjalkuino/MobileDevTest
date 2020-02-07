@@ -10,17 +10,22 @@ import UIKit
 
 class DashViewModel {
     
+    var currenciesList:[String] = []
     
-    
-    init() {
-        
+    func getAllCurrentConvertion(completion:@escaping((Bool) -> Void)) {
         APIService<CurrenciesAPIModel>.get(from: .currencies, completion: { result in
             switch result {
             case .success(let data):
-                print(data)
+                self.populateavailableCurrencies(quotes: data.quotes)
+                completion(true)
             case .failure(let error):
                 print(error)
+                completion(false)
             }
         })
+    }
+    
+    private func populateavailableCurrencies(quotes:[String:Double]) {
+        currenciesList = quotes.keys.map({ $0 })
     }
 }
