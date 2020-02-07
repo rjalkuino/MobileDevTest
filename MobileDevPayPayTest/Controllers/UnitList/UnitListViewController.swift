@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol UnitListViewControllerDelegate:class {
+    func didSelectUnit(str:String)
+}
+
 class UnitListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
     var items:[String] = []
+    
+    weak var delegate:UnitListViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +52,7 @@ extension UnitListViewController:UITableViewDelegate,UITableViewDataSource {
 //            cell.accessoryType = .None
 //        }
         
-        cell.textLabel?.text = data
+        cell.textLabel?.text = self.replaceStr(unit: data)
         
         return cell
     }
@@ -62,9 +68,21 @@ extension UnitListViewController:UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
+            let data = items[indexPath.row]
             cell.accessoryType = .checkmark
-
+            delegate?.didSelectUnit(str: data)
+            navigationController?.popViewController(animated: true)
         }
+    }
+    
+    private func replaceStr(unit:String) -> String {
+        let str = unit.replacingOccurrences(of: "USD",
+                                            with: "",
+                                            options: NSString.CompareOptions.literal, range: nil)
+        
+        if str == "" { return "USD" }
+        
+        return str
     }
     
 }

@@ -29,6 +29,7 @@ class DashViewController: UIViewController {
     @IBAction func currencyChangerBtnPressed(_ sender: Any) {
         let controller = UnitListViewController.loadFromNib()
         controller.items = viewModel.currenciesList
+        controller.delegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -64,15 +65,27 @@ extension DashViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: cellSize, height: cellSize)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
        return 10
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
        return 10
+    }
+}
+
+extension DashViewController:UnitListViewControllerDelegate{
+    func didSelectUnit(str: String) {
+        viewModel.selectedUnit = str
     }
 }

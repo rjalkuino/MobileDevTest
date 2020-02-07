@@ -12,6 +12,7 @@ class DashViewModel {
     
     var currenciesList:[String] = []
     var quotes:[String:Double] = [:]
+    var selectedUnit:String = "USDUSD"
     
     func getAllCurrentConvertion(completion:@escaping((Bool) -> Void)) {
         APIService<CurrenciesAPIModel>.get(from: .currencies, completion: { result in
