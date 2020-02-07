@@ -15,7 +15,7 @@
 		1719977023ED3D880078DAD6 /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719976E23ED3D880078DAD6 /* DashViewController.swift */; };
 		1719977123ED3D880078DAD6 /* DashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1719976F23ED3D880078DAD6 /* DashViewController.xib */; };
 		1719977423ED400A0078DAD6 /* CurrenciesAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719977323ED400A0078DAD6 /* CurrenciesAPIModel.swift */; };
-		1719977623ED483A0078DAD6 /* DecodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719977523ED483A0078DAD6 /* DecodableExtensions.swift */; };
+		171997B423ED575C0078DAD6 /* DashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B323ED575C0078DAD6 /* DashViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		1719976E23ED3D880078DAD6 /* DashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
 		1719976F23ED3D880078DAD6 /* DashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashViewController.xib; sourceTree = "<group>"; };
 		1719977323ED400A0078DAD6 /* CurrenciesAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAPIModel.swift; sourceTree = "<group>"; };
-		1719977523ED483A0078DAD6 /* DecodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableExtensions.swift; sourceTree = "<group>"; };
+		171997B323ED575C0078DAD6 /* DashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,6 @@
 		1719974F23ED33D60078DAD6 /* MobileDevPayPayTest */ = {
 			isa = PBXGroup;
 			children = (
-				1719977923ED4F070078DAD6 /* Currencies */,
 				1719977223ED3F880078DAD6 /* APIModel */,
 				1719976823ED35130078DAD6 /* Services */,
 				1719976523ED34540078DAD6 /* Extensions */,
@@ -80,6 +79,7 @@
 			children = (
 				1719976E23ED3D880078DAD6 /* DashViewController.swift */,
 				1719976F23ED3D880078DAD6 /* DashViewController.xib */,
+				171997B323ED575C0078DAD6 /* DashViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -88,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				1719976623ED34B90078DAD6 /* UIViewControllerExtension.swift */,
-				1719977523ED483A0078DAD6 /* DecodableExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -115,13 +114,6 @@
 				1719977323ED400A0078DAD6 /* CurrenciesAPIModel.swift */,
 			);
 			path = APIModel;
-			sourceTree = "<group>";
-		};
-		1719977923ED4F070078DAD6 /* Currencies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Currencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +191,8 @@
 				1719977423ED400A0078DAD6 /* CurrenciesAPIModel.swift in Sources */,
 				1719977023ED3D880078DAD6 /* DashViewController.swift in Sources */,
 				1719976A23ED35440078DAD6 /* APIService.swift in Sources */,
+				171997B423ED575C0078DAD6 /* DashViewModel.swift in Sources */,
 				1719976723ED34B90078DAD6 /* UIViewControllerExtension.swift in Sources */,
-				1719977623ED483A0078DAD6 /* DecodableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,19 +9,14 @@
 import UIKit
 
 class DashViewController: UIViewController {
-
+    
+    let viewModel = DashViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        APIService<CurrenciesAPIModel>.get(from: .currencies, completion: { result in
-            switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-        })
+        
     }
 
 }

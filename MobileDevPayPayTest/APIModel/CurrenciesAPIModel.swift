@@ -9,7 +9,7 @@
 import UIKit
 
 struct CurrenciesAPIModel: Codable {
-    let quotes: [String:Any]
+    let quotes: [String:Double]
     let timestamp: Double
     let source: String
 }

@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = DashViewController.loadFromNib()
         window?.makeKeyAndVisible()
         
+        
         return true
     }
 
