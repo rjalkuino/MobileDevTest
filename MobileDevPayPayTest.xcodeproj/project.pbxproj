@@ -19,9 +19,20 @@
 		171997B723ED5CA60078DAD6 /* DashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B523ED5CA60078DAD6 /* DashCollectionViewCell.swift */; };
 		171997B823ED5CA60078DAD6 /* DashCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171997B623ED5CA60078DAD6 /* DashCollectionViewCell.xib */; };
 		171997BA23ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171997B923ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift */; };
+		1C779B3323EE84BC001A6E9D /* MobileDevPayPayTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C779B3223EE84BC001A6E9D /* MobileDevPayPayTestUITests.swift */; };
 		1CCF5E8C23ED99230011E72B /* UnitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF5E8A23ED99230011E72B /* UnitListViewController.swift */; };
 		1CCF5E8D23ED99230011E72B /* UnitListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCF5E8B23ED99230011E72B /* UnitListViewController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C779B3523EE84BC001A6E9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1719974523ED33D60078DAD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1719974C23ED33D60078DAD6;
+			remoteInfo = MobileDevPayPayTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1719974D23ED33D60078DAD6 /* MobileDevPayPayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevPayPayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,12 +49,22 @@
 		171997B523ED5CA60078DAD6 /* DashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashCollectionViewCell.swift; sourceTree = "<group>"; };
 		171997B623ED5CA60078DAD6 /* DashCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashCollectionViewCell.xib; sourceTree = "<group>"; };
 		171997B923ED5E6B0078DAD6 /* CollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		1C779B3023EE84BC001A6E9D /* MobileDevPayPayTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDevPayPayTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C779B3223EE84BC001A6E9D /* MobileDevPayPayTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevPayPayTestUITests.swift; sourceTree = "<group>"; };
+		1C779B3423EE84BC001A6E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CCF5E8A23ED99230011E72B /* UnitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitListViewController.swift; sourceTree = "<group>"; };
 		1CCF5E8B23ED99230011E72B /* UnitListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1719974A23ED33D60078DAD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C779B2D23EE84BC001A6E9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				1719974F23ED33D60078DAD6 /* MobileDevPayPayTest */,
+				1C779B3123EE84BC001A6E9D /* MobileDevPayPayTestUITests */,
 				1719974E23ED33D60078DAD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				1719974D23ED33D60078DAD6 /* MobileDevPayPayTest.app */,
+				1C779B3023EE84BC001A6E9D /* MobileDevPayPayTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +149,15 @@
 			path = APIModel;
 			sourceTree = "<group>";
 		};
+		1C779B3123EE84BC001A6E9D /* MobileDevPayPayTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1C779B3223EE84BC001A6E9D /* MobileDevPayPayTestUITests.swift */,
+				1C779B3423EE84BC001A6E9D /* Info.plist */,
+			);
+			path = MobileDevPayPayTestUITests;
+			sourceTree = "<group>";
+		};
 		1CCF5E8823ED98E90011E72B /* UnitList */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,18 +199,40 @@
 			productReference = 1719974D23ED33D60078DAD6 /* MobileDevPayPayTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1C779B2F23EE84BC001A6E9D /* MobileDevPayPayTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C779B3923EE84BC001A6E9D /* Build configuration list for PBXNativeTarget "MobileDevPayPayTestUITests" */;
+			buildPhases = (
+				1C779B2C23EE84BC001A6E9D /* Sources */,
+				1C779B2D23EE84BC001A6E9D /* Frameworks */,
+				1C779B2E23EE84BC001A6E9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C779B3623EE84BC001A6E9D /* PBXTargetDependency */,
+			);
+			name = MobileDevPayPayTestUITests;
+			productName = MobileDevPayPayTestUITests;
+			productReference = 1C779B3023EE84BC001A6E9D /* MobileDevPayPayTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1719974523ED33D60078DAD6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Robert John Alkuino";
 				TargetAttributes = {
 					1719974C23ED33D60078DAD6 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					1C779B2F23EE84BC001A6E9D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1719974C23ED33D60078DAD6;
 					};
 				};
 			};
@@ -196,6 +250,7 @@
 			projectRoot = "";
 			targets = (
 				1719974C23ED33D60078DAD6 /* MobileDevPayPayTest */,
+				1C779B2F23EE84BC001A6E9D /* MobileDevPayPayTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +265,13 @@
 				1719975A23ED33DC0078DAD6 /* Assets.xcassets in Resources */,
 				171997B823ED5CA60078DAD6 /* DashCollectionViewCell.xib in Resources */,
 				1719977123ED3D880078DAD6 /* DashViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C779B2E23EE84BC001A6E9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +294,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C779B2C23EE84BC001A6E9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C779B3323EE84BC001A6E9D /* MobileDevPayPayTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C779B3623EE84BC001A6E9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1719974C23ED33D60078DAD6 /* MobileDevPayPayTest */;
+			targetProxy = 1C779B3523EE84BC001A6E9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1719975B23ED33DC0078DAD6 /* LaunchScreen.storyboard */ = {
@@ -394,6 +472,42 @@
 			};
 			name = Release;
 		};
+		1C779B3723EE84BC001A6E9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MobileDevPayPayTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rjalkuino.MobileDevPayPayTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MobileDevPayPayTest;
+			};
+			name = Debug;
+		};
+		1C779B3823EE84BC001A6E9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MobileDevPayPayTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rjalkuino.MobileDevPayPayTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MobileDevPayPayTest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,6 +525,15 @@
 			buildConfigurations = (
 				1719976223ED33DC0078DAD6 /* Debug */,
 				1719976323ED33DC0078DAD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C779B3923EE84BC001A6E9D /* Build configuration list for PBXNativeTarget "MobileDevPayPayTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C779B3723EE84BC001A6E9D /* Debug */,
+				1C779B3823EE84BC001A6E9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
