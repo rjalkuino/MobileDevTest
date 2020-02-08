@@ -50,6 +50,7 @@ class APIService<T:Decodable> {
     
     
     private static func fetch(url: URL,
+                              params:[String:Any]? = nil,
                               completion: @escaping(Result<T, APIServiceError>) -> Void) {
         
         guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
@@ -57,7 +58,15 @@ class APIService<T:Decodable> {
             return 
         }
         
-        let queryItems = [URLQueryItem(name: "access_key", value: apiKey)]
+        var queryItems = [URLQueryItem(name: "access_key", value: apiKey)]
+        
+        if let dictParams = params {
+            for (key,values) in dictParams {
+                let query = URLQueryItem(name: key, value: (values as! String))
+                queryItems.append(query)
+            }
+        }
+        
         urlComponents.queryItems = queryItems
         
         guard let url = urlComponents.url else {
@@ -94,6 +103,6 @@ class APIService<T:Decodable> {
         let url = baseURL
             .appendingPathComponent(endpoint.description)
         
-        return fetch(url: url, completion: completion)
+        return fetch(url: url,params: params, completion: completion)
     }
 }

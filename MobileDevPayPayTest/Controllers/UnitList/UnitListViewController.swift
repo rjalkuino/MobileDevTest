@@ -18,6 +18,8 @@ class UnitListViewController: UIViewController {
     
     var items:[String] = []
     
+    var selectedItem:String?
+    
     weak var delegate:UnitListViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -45,12 +47,13 @@ extension UnitListViewController:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.reuseIdentifier,
                                                  for: indexPath)
         
-//        if (some condition to initially checkmark a row)
-//            cell.accessoryType = .Checkmark
-//            tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.Bottom)
-//        } else {
-//            cell.accessoryType = .None
-//        }
+        if let unit = selectedItem {
+            if (unit == data) {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
+        }
         
         cell.textLabel?.text = self.replaceStr(unit: data)
         
